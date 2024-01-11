@@ -37,17 +37,17 @@ curl -LO https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp
 
 modify filebeat-configmap.yml at line23: change value from bbtg-group-x to 'bbtg-group-<group_number>'
 ```sh
-vi filebeat-configmap.yml
+vi filebeat-configmap.yaml
 ```
 
 apply the filebeat configuration.
 ```sh
-kubectl apply -f filebeat-configmap.yml
+kubectl apply -f filebeat-configmap.yaml
 ```
 
 ### 3. Deploy filebeat agent as daemonset
 ```sh
-kubectl apply -f https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day2/yaml/filebeat-daemonset.yasml
+kubectl apply -f https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day2/yaml/filebeat-daemonset.yaml
 ```
 
 ## Verify
@@ -58,5 +58,7 @@ kubectl get pod -n logging
 
 The response should be like this:
 ```sh
-
+NAME                  READY   STATUS    RESTARTS   AGE
+filebeat-main-cvrvp   1/1     Running   0          15s
+filebeat-main-sllx8   1/1     Running   0          15s
 ```
