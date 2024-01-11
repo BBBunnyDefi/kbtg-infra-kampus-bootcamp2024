@@ -78,3 +78,4 @@ http://13.251.177.184:30172/wp-admin/
 ```
 
 You should see the WordPress set up page similar to the following screenshot.
+![WordPress](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/ca9e0dc0-8d9d-48a8-b368-4948678dc80b)
