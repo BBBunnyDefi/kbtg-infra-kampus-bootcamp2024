@@ -20,7 +20,7 @@ data:
     - add_id: ~
     - add_fields:
         fields:
-          group: bbtg-group-x
+          group: kbtg-kampus-group-x
 
     name: ${NODE_NAME}
 
