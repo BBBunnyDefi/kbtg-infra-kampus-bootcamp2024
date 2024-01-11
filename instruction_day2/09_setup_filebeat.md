@@ -27,12 +27,12 @@ kubectl create namespace logging
 
 ### 2. Apply a custom role to grant Filebeat permission to retrieve container logs.
 ```sh
-kubectl apply -f https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day2/yaml/filebeat-role.yml
+kubectl apply -f https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day2/yaml/filebeat-role.yaml
 ```
 
 ### 3. Download the ConfigMap and modify the Filebeat configuration for each group.
 ```sh
-curl -LO https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day2/yaml/filebeat-configmap.yml
+curl -LO https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day2/yaml/filebeat-configmap.yaml
 ```
 
 modify filebeat-configmap.yml at line23: change value from bbtg-group-x to 'bbtg-group-<group_number>'
@@ -47,7 +47,7 @@ kubectl apply -f filebeat-configmap.yml
 
 ### 3. Deploy filebeat agent as daemonset
 ```sh
-kubectl apply -f https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day2/yaml/filebeat-daemonset.yml
+kubectl apply -f https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day2/yaml/filebeat-daemonset.yasml
 ```
 
 ## Verify
