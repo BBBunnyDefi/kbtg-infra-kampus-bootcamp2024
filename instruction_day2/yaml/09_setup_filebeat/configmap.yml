@@ -1,0 +1,34 @@
+apiVersion: v1
+data:
+  filebeat.yml: |
+    filebeat.autodiscover:
+      providers:
+      - type: kubernetes
+        node: ${NODE_NAME}
+        include_annotations: '*'
+        annotations.dedot: true
+        labels.dedot: true
+        hints.enabled: true
+        hints.default_config:
+          type: container
+          paths:
+          - /var/log/containers/*-${data.kubernetes.container.id}.log
+          exclude_lines: ["^\\s+[\\-`('.|_]"]  # drop asciiart lines
+          scan_frequency: 30s
+
+    processors:
+    - add_id: ~
+
+    name: ${NODE_NAME}
+
+    setup.ilm.enabled: false
+    setup.template.enabled: false
+
+    output.logstash:
+      hosts: ["172.31.36.68:5044"]
+      worker: 2
+      bulk_max_size: 1000
+kind: ConfigMap
+metadata:
+  name: filebeat
+  namespace: logging

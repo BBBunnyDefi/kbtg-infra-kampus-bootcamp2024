@@ -11,7 +11,7 @@ kubectl apply -f https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-
 Now you can verify that all objects exist and can collect CPU/Memory metrics.
 ### Get pod metrics
 ```sh
-kubetl top pod
+kubectl top pod
 ```
 
 The response should be like this:
@@ -22,7 +22,7 @@ wordpress-mysql-86b9f64c4c-qzdll   4m           509Mi
 ```
 ### Get node metrics
 ```sh
-kubetl top nodes
+kubectl top nodes
 ```
 
 The response should be like this:
