@@ -68,13 +68,18 @@ wordpress-mysql-1894417608-x5dzt   1/1       Running   0          40s
 
 3. Verify that the Service is running by running the following command:
 ```sh
+kubectl get service wordpress
+```
+
+The response should be like this:
+```sh
 NAME        TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 wordpress   NodePort   10.96.71.154   <none>        80:30172/TCP   29m
 ```
 
 4. Copy the Public IP address for master node, and load the page in your browser to view your site with port 30172 (see port from service wordpress).
 ```sh
-http://13.251.177.184:30172/wp-admin/
+http://<master-ipaddress>:30172/wp-admin/
 ```
 
 You should see the WordPress set up page similar to the following screenshot.

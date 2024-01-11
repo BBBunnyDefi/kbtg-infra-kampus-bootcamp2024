@@ -6,3 +6,4 @@ Username: admin
 Password: Dt@awslabs!!!25
 Console: https://d5su1eqcfe6yn.cloudfront.net/
 ```
+
