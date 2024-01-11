@@ -1,52 +1,80 @@
-# Title
-
-<!-- Add Image Here -->
-
-One Paragraph of the project description
-
-<!-- Add Badge Here (https://shields.io/) -->
-
-<a href="#getting-started">Getting Started</a> •
-<a href="#built-with">Built With</a> •
-<a href="#roadmap">Roadmap</a> •
-<a href="#community">Community</a> •
-<a href="#contributing">Contributing</a> •
-<a href="#license">License</a>
-
+# 02 Deploy Simple Application on Kubernetes Cluster
+Let's deploy simple application name "WORDPRESS" on your kubernetes cluster 
+, inspired from https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
 <!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 
 ## Getting Started
+This tutorial demonstrates how to deploy a WordPress site and a MySQL database using a Kubernetes cluster (excluding PersistentVolume for stateful purposes).
 
-Instructions on setting up your project locally  
-To get a local copy up and running follow these simple steps
+## Objectives
+- Create a WordPress deployment as a web application.
+- Create a NodePort-type service for the WordPress service.
+- Create a MySQL deployment as a database.
+- Create a secret named "mysql-pass" to store the password for your database.
 
-### Prerequisites
+## Expected Outcome
+- Can Access Wordpress via Public IP of Master node with NodePort
 
-List things you need to use the software
+## Prerequisites
+- Must finish task: 01_setup_k8s
 
-- [Example 1]()
 
-### Installation
+## Installation
+### 1. Create Secret name "mysql-pass"
 
-Run under scripts
-
+Download the secret file.
 ```sh
-git clone <project>
-cd <project>
+curl -LO https://k8s.io/examples/application/wordpress/mysql-deployment.yaml
 ```
 
-### Run
+### 2. Deploy MySQL deployment
 
-Run under scripts
-
+Download the MySQL deployment configuration file.
 ```sh
-run <environment>
+curl -LO https://k8s.io/examples/application/wordpress/mysql-deployment.yaml
 ```
 
-### Test
+### 3. Deploy Wordpress deployment
 
-Run under scripts
-
+Download the WordPress configuration file.
 ```sh
-test <environment>
+curl -LO https://k8s.io/examples/application/wordpress/wordpress-deployment.yaml
 ```
+
+## Verify
+Now you can verify that all objects exist.
+
+1. Verify that the Secret exists by running the following command:
+```sh
+kubectl get secrets
+```
+
+The response should be like this:
+```sh
+NAME                    TYPE                                  DATA   AGE
+mysql-pass-c57bb4t7mf   Opaque                                1      9s
+```
+
+2. Verify that the Pod is running by running the following command:
+```sh
+kubectl get pods
+```
+
+The response should be like this:
+```sh
+NAME                               READY     STATUS    RESTARTS   AGE
+wordpress-mysql-1894417608-x5dzt   1/1       Running   0          40s
+```
+
+3. Verify that the Service is running by running the following command:
+```sh
+NAME        TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+wordpress   NodePort   10.96.71.154   <none>        80:30172/TCP   29m
+```
+
+4. Copy the Public IP address for master node, and load the page in your browser to view your site with port 30172 (see port from service wordpress).
+```sh
+http://13.251.177.184:30172/wp-admin/
+```
+
+You should see the WordPress set up page similar to the following screenshot.
