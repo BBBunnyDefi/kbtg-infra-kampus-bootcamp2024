@@ -28,7 +28,7 @@ data:
     setup.template.enabled: false
 
     output.logstash:
-      hosts: ["172.31.36.68:5044"]
+      hosts: ["52.74.169.114:5044"]
 kind: ConfigMap
 metadata:
   name: filebeat

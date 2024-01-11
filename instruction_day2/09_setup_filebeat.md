@@ -8,8 +8,7 @@ Everything is deployed under the "infra-logging" namespace.
 
 
 ## Objectives
-- Send cont
-ainer logs to the ELK system and display them on the Kibana console.
+- Send container logs to the ELK system and display them on the Kibana console.
 
 ## Expected Outcome
 - Container logs appear on the Kibana console.
@@ -62,3 +61,4 @@ NAME                  READY   STATUS    RESTARTS   AGE
 filebeat-main-cvrvp   1/1     Running   0          15s
 filebeat-main-sllx8   1/1     Running   0          15s
 ```
+
