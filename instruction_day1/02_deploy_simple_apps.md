@@ -24,21 +24,21 @@ This tutorial demonstrates how to deploy a WordPress site and a MySQL database u
 
 Download the secret file.
 ```sh
-curl -LO https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day1/yaml/mysql-pass-secret.yml
+kubectl apply -f https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day1/yaml/mysql-pass-secret.yml
 ```
 
 ### 2. Deploy MySQL deployment
 
 Download the MySQL deployment configuration file.
 ```sh
-curl -LO https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day1/yaml/mysql-deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day1/yaml/mysql-deployment.yaml
 ```
 
 ### 3. Deploy Wordpress deployment
 
 Download the WordPress configuration file.
 ```sh
-curl -LO https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day1/yaml/wordpress-deployment.yaml
+kubectl apply -f https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day1/yaml/wordpress-deployment.yaml
 ```
 
 ## Verify
