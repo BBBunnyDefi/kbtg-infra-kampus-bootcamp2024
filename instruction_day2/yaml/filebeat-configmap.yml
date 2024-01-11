@@ -18,6 +18,9 @@ data:
 
     processors:
     - add_id: ~
+    - add_fields:
+        fields:
+          group: bbtg-group-x
 
     name: ${NODE_NAME}
 
@@ -26,8 +29,6 @@ data:
 
     output.logstash:
       hosts: ["172.31.36.68:5044"]
-      worker: 2
-      bulk_max_size: 1000
 kind: ConfigMap
 metadata:
   name: filebeat
