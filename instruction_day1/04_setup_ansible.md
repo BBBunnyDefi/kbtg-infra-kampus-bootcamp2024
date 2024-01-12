@@ -76,9 +76,9 @@ Try to run example ansible adhoc command
 ansible -i hosts myhost -m ping
 ```
 
-(optional) and try to run ansible-playbook to create linux user to another machines
+## (optional) and try to run ansible-playbook to create linux user to another machines
 
-1) Create new user name example-user
+### Create new user name example-user
 ```sh
 #cat example-createuser.yml
   - name: Create User for EC2 
@@ -95,12 +95,14 @@ ansible -i hosts myhost -m ping
         with_items: 
           - example-user
 ```
+_or can download this yaml file from: https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day1/assets/ansible-playboox-examples/example-createuser.yml_
+
 And run following command:
 ```sh
 ansible-playbook -i hosts example-createuser.yml
 ```
 
-2) Remove user name example-user
+### Remove user name example-user
 ```sh
 #cat example-deleteuser.yml
   - name: Remove User for EC2 
@@ -118,6 +120,8 @@ ansible-playbook -i hosts example-createuser.yml
         with_items: 
           - example-user
 ```
+_or can download this yaml file from: https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day1/assets/ansible-playboox-examples/example-deleteuser.yml_
+
 And run following command:
 ```sh
 ansible-playbook -i hosts example-deleteuser.yml
