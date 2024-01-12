@@ -41,15 +41,15 @@ dnf update -y
 ```
 ### Set hostname
 ```sh
-hostnamectl set-hostname master-55.local
+hostnamectl set-hostname k8s-master01.local
 ```
 ### Set local DNS 
 ```sh
 # Use the private IP address of the EC2 instance to map host file.
 # vi /etc/hosts
-10.1.10.55  	master-55.local 
-10.1.10.56  	worker-56.local 
-10.1.10.57  	worker-57.local 
+10.1.10.55  	k8s-master01.local
+10.1.10.56  	k8s-worker01.local
+10.1.10.57  	k8s-worker02.local
 ```
 ### Disable Swap 
 ```sh
@@ -141,9 +141,9 @@ hostnamectl set-hostname worker-56.local
 ```sh
 # Use the private IP address of the EC2 instance to map host file.
 # vi /etc/hosts
-10.1.10.55  	master-55.local 
-10.1.10.56  	worker-56.local 
-10.1.10.57  	worker-57.local 
+10.1.10.55  	k8s-master01.local
+10.1.10.56  	k8s-worker01.local
+10.1.10.57  	k8s-worker02.local
 ```
 ### Disable Swap 
 ```sh

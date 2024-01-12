@@ -53,4 +53,4 @@ Open Grafana UI web page
 http://<public-ip-address>:3000/zabbix
 ```
 
-## Picture: How to import zabbix datasource
+## Step-by-Step: How to import zabbix datasource to Grafana
