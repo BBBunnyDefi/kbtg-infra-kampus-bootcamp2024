@@ -24,7 +24,7 @@ timedatectl set-timezone Asia/Bangkok
 ```sh
 dnf update -y
 ```
-### Reboot server
+### Reboot server to take effect
 ```sh
 reboot
 ```
@@ -110,7 +110,7 @@ timedatectl set-timezone Asia/Bangkok
 ```sh
 dnf update -y
 ```
-### Reboot server
+### Reboot server to take effect
 ```sh
 reboot
 ```
