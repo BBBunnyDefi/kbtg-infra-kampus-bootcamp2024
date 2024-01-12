@@ -9,5 +9,6 @@ Welcome to K-Infra Bootcamp - Intensive Workshop Day #1
 <img width="630" alt="business-requirement-diagram2" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/e6d13eda-e03b-4c22-a20c-151406e43289">
 
 ## Day1
+- [01 Setup Kubernetes Cluster](instruction_day1/01_setup_k8s.md)
 
 ## Day2
