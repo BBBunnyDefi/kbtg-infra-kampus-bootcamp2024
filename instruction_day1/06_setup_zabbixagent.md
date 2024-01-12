@@ -1,6 +1,6 @@
 # 06_setup_zabbixagent
 The Zabbix Agent is a crucial component of the Zabbix monitoring system, responsible for collecting data from the systems it runs on and sending that information to the Zabbix Server for processing.
-![Slide6](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/c0a456a0-5f9d-4ce8-8916-a0bcf951236c)
+![Slide7](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/379fb96c-cd7b-42bc-a6a2-a9f3ec794685)
 
 ## Objectives
 - Setup Zabbix Server for monitoring metrics on your system.
