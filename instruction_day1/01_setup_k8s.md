@@ -81,7 +81,7 @@ systemctl enable --now kubelet
 ### Initialize Kubernetes Cluster 
 ```sh
 # Initialize kubernetes cluster
-kubeadm init --apiserver-advertise-address=10.1.10.55 --pod-network-cidr=192.168.0.0/16
+kubeadm init --apiserver-advertise-address=172.31.47.31 --pod-network-cidr=192.168.0.0/16
 ```
 ### Deploy Calico Network 
 ```sh
@@ -102,27 +102,21 @@ kubeadm token create --print-join-command
 ```sh
 sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 ```
-### Install NTP ( Chrony ) 
-install chrony package
+### Set time zone
 ```sh
-dnf install chrony -y 
-```
-modify configuration file to sync time with server.
-```sh
-#vi /etc/chrony.conf 
-server 158.108.212.149 
-```
-restart chrony service to apply the effect
-```sh
-systemctl –now enable chronyd 
+timedatectl set-timezone Asia/Bangkok
 ```
 ### Update all packages
 ```sh
 dnf update -y
 ```
-### Set hostname
+### Reboot server
 ```sh
-hostnamectl set-hostname worker-56.local
+reboot
+```
+### Set hostname replace xx for your server name
+```sh
+hostnamectl set-hostname k8s-workerxx.local
 ```
 ### Set local DNS 
 ```sh
@@ -170,7 +164,7 @@ dnf install -y kubeadm
 ```sh
 systemctl enable --now kubelet
 ```
-### Join worker node to kubernetes cluster
+### Join worker node to kubernetes cluster (this is example, check command on master node)
 ```sh
 kubeadm join k8s-master01.local:6443 --token dw3d4j.dqe6m0rewrhzh5k4 --discovery-token-ca-cert-hash sha256:a9babf7f033fd6979b1ba89ff44c7dfe43f28ea2fbe1949fce5efccc511c465b
 ```
