@@ -16,8 +16,8 @@ This tutorial demonstrates how to deploy a WordPress site and a MySQL database u
 - Can Access Wordpress via Public IP of Master node with NodePort
 
 ## Prerequisites
-- Must finish task: 01_setup_k8s
-
+- Must finish task
+    - 01_setup_k8s
 
 ## Installation
 ### 1. Create Secret name "mysql-pass"

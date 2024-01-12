@@ -1,40 +1,39 @@
-# 04_setup_ansible
-Ansible is an open-source automation tool that is used for configuration management, application deployment, task automation, and orchestration. Developed by Red Hat, Ansible simplifies complex tasks and processes, allowing users to manage and automate infrastructure more efficiently.
+# 06_setup_zabbixagent
+The Zabbix Agent is a crucial component of the Zabbix monitoring system, responsible for collecting data from the systems it runs on and sending that information to the Zabbix Server for processing. Here's an overview of the Zabbix Agent:
 
 ## Objectives
-- Setup Ansible for this workshop to automate tasks in the future.
+- Setup Zabbix Server for monitoring metrics on your system.
 
 ## Expected Outcome
-- Ansible is ready to use.
+- The Zabbix Agent is ready to use, and the Zabbix server can collect metrics for all EC2 machines.
 
 ## Prerequisites
-- no prerequisites
+- Must finish task
+    - 04_setup_ansible
+    - 05_setup_zabbixserver
 
 ## Installation
 > [!NOTE]
 > The following instruction for the [helper] only.
 
-Install ansible packages
+Use this Ansible playbook YAML to install the Zabbix Agent on all your machines.
+
+Should be Prepare install_zabbix-agent2.yml file from assets\install_zabbix-agent2.yml
+
+Execute following command
 ```sh
-dnf install -y epel-release 
-dnf install -y ansible 
+ansible-playbook -i hosts install_zabbix-agent2.yml
 ```
 
 ## Verify
-Run this command to get ansible version
+> [!NOTE]
+> The following instruction for the non [helper] server only.
+Check zabbix-agent on another machines
+
 ```sh
-ansible -version 
+systemctl status zabbix-agent
 ```
-The response should be like this
+The response should be like this:
 ```sh
-# ansible --version
-ansible [core 2.16.2]
-  config file = /etc/ansible/ansible.cfg
-  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/lib/python3.11/site-packages/ansible
-  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
-  executable location = /bin/ansible
-  python version = 3.11.5 (main, Oct 25 2023, 14:45:39) [GCC 8.5.0 20210514 (Red Hat 8.5.0-21)] (/usr/bin/python3.11)
-  jinja version = 3.1.2
-  libyaml = True 
+
 ```
