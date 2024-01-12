@@ -13,10 +13,10 @@ Everything is deployed under the "infra-logging" namespace.
 ## Expected Outcome
 - Container logs appear on the Kibana console.
 
-
 ## Prerequisites
-- Must finish task: 01_setup_k8s, 02_deploy_simple_apps.md
-
+- Must finish task: 
+    - 01_setup_k8s
+    - 02_deploy_simple_apps
 
 ## Installation
 ### 1. Create New Namespace for logging 

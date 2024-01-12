@@ -50,7 +50,7 @@ systemctl enable --now grafana-server.service
 ## Verify
 Open Grafana UI web page
 ```sh
-http://<public-ip-address>:3000/zabbix
+http://<public-ip-address>:3000/grafana
 ```
 
 ## Step-by-Step: How to import zabbix datasource to Grafana
