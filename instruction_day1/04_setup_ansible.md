@@ -14,6 +14,11 @@ Ansible is an open-source automation tool that is used for configuration managem
 > [!NOTE]
 > The following instruction for the [helper] only.
 
+### Set time zone
+```sh
+timedatectl set-timezone Asia/Bangkok
+```
+
 ### Install ansible packages
 ```sh
 dnf install -y epel-release 

@@ -33,9 +33,9 @@ reboot
 hostnamectl set-hostname k8s-master01.local
 ```
 ### Set local DNS 
+Edit file /etc/hosts
 ```sh
 # Use the private IP address of the EC2 instance to map host file.
-# vi /etc/hosts
 172.31.47.31  k8s-master01.local
 172.31.47.32  k8s-worker01.local
 172.31.47.33  k8s-worker02.local
@@ -119,9 +119,9 @@ reboot
 hostnamectl set-hostname k8s-workerxx.local
 ```
 ### Set local DNS 
+Edit file /etc/hosts
 ```sh
 # Use the private IP address of the EC2 instance to map host file.
-# vi /etc/hosts
 172.31.47.31  k8s-master01.local
 172.31.47.32  k8s-worker01.local
 172.31.47.33  k8s-worker02.local
