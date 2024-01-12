@@ -65,20 +65,19 @@ systemctl restart containerd
 ```
 ### Add the Kubernetes repository to the Linux repository.
 ```sh
-cat >>/etc/yum.repos.d/kubernetes.repo <<EOF 
-[kubernetes] 
-name=Kubernetes 
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64 
-enabled=1 
-gpgcheck=1 
-repo_gpgcheck=1 
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg 
-       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg 
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF 
 ```
 ### Install Kubernetes packages, including Kubelet, kubeadm, and kubectl.
 ```sh
-yum install -y kubeadm
+dnf install -y kubeadm
 ```
 ### Enable Kubelet service 
 ```sh
@@ -145,9 +144,9 @@ swapoff -a; sed -i '/swap/d' /etc/fstab
 ### Install Docker
 ```sh
 # install docker packages
-yum install -y yum-utils device-mapper-persistent-data lvm2 
+dnf install -y yum-utils device-mapper-persistent-data lvm2 
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo 
-yum install -y docker-ce 
+dnf install -y docker-ce 
 # restart docker service
 systemctl enable --now docker 
 ```
@@ -158,20 +157,19 @@ systemctl restart containerd
 ```
 ### Add the Kubernetes repository to the Linux repository.
 ```sh
-cat >>/etc/yum.repos.d/kubernetes.repo <<EOF 
-[kubernetes] 
-name=Kubernetes 
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64 
-enabled=1 
-gpgcheck=1 
-repo_gpgcheck=1 
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg 
-       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg 
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF 
 ```
 ### Install Kubernetes packages, including Kubelet, kubeadm, and kubectl.
 ```sh
-yum install -y kubeadm
+dnf install -y kubeadm
 ```
 ### Enable Kubelet service 
 ```sh
