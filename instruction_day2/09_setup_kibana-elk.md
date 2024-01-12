@@ -1,4 +1,4 @@
-# 08_setup_kibana-elk
+# 09_setup_kibana-elk
 Kibana is an open-source data visualization and exploration tool designed to work with the Elasticsearch data store. Together with Elasticsearch, Logstash, and Beats, Kibana forms what is known as the ELK Stack (Elasticsearch, Logstash, Kibana).
 
 ## Objectives

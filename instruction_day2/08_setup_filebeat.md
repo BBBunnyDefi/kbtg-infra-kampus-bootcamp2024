@@ -1,4 +1,4 @@
-# 09_setup_filebeat
+# 08_setup_filebeat
 You deploy Filebeat as a DaemonSet to ensure there’s a running instance on each node of the cluster.
 
 The container logs host folder (/var/log/containers) is mounted on the Filebeat container. Filebeat starts an input for the files and begins harvesting them as soon as they appear in the folder.
