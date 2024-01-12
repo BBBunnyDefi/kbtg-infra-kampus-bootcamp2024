@@ -15,23 +15,18 @@ This tutorial demonstrates how to provision a Kubernetes cluster for this worksh
 ```sh
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 ```
-### Install NTP ( Chrony ) 
-install chrony package
+### Set time zone
 ```sh
-dnf install chrony -y 
+timedatectl set-timezone Asia/Bangkok
 ```
-modify configuration file to sync time with server.
-```sh
-#vi /etc/chrony.conf 
-server 158.108.212.149 
-```
-restart chrony service to apply the effect
-```sh
-systemctl –now enable chronyd 
-```
+
 ### Update all packages
 ```sh
 dnf update -y
+```
+### Reboot server
+```sh
+reboot
 ```
 ### Set hostname
 ```sh
@@ -65,20 +60,19 @@ systemctl restart containerd
 ```
 ### Add the Kubernetes repository to the Linux repository.
 ```sh
-cat >>/etc/yum.repos.d/kubernetes.repo <<EOF 
-[kubernetes] 
-name=Kubernetes 
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64 
-enabled=1 
-gpgcheck=1 
-repo_gpgcheck=1 
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg 
-       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg 
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF 
 ```
 ### Install Kubernetes packages, including Kubelet, kubeadm, and kubectl.
 ```sh
-yum install -y kubeadm
+dnf install -y kubeadm
 ```
 ### Enable Kubelet service 
 ```sh
@@ -87,7 +81,7 @@ systemctl enable --now kubelet
 ### Initialize Kubernetes Cluster 
 ```sh
 # Initialize kubernetes cluster
-kubeadm init --apiserver-advertise-address=10.1.10.55 --pod-network-cidr=192.168.0.0/16
+kubeadm init --apiserver-advertise-address=172.31.47.31 --pod-network-cidr=192.168.0.0/16
 ```
 ### Deploy Calico Network 
 ```sh
@@ -108,27 +102,21 @@ kubeadm token create --print-join-command
 ```sh
 sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 ```
-### Install NTP ( Chrony ) 
-install chrony package
+### Set time zone
 ```sh
-dnf install chrony -y 
-```
-modify configuration file to sync time with server.
-```sh
-#vi /etc/chrony.conf 
-server 158.108.212.149 
-```
-restart chrony service to apply the effect
-```sh
-systemctl –now enable chronyd 
+timedatectl set-timezone Asia/Bangkok
 ```
 ### Update all packages
 ```sh
 dnf update -y
 ```
-### Set hostname
+### Reboot server
 ```sh
-hostnamectl set-hostname worker-56.local
+reboot
+```
+### Set hostname replace xx for your server name
+```sh
+hostnamectl set-hostname k8s-workerxx.local
 ```
 ### Set local DNS 
 ```sh
@@ -145,9 +133,9 @@ swapoff -a; sed -i '/swap/d' /etc/fstab
 ### Install Docker
 ```sh
 # install docker packages
-yum install -y yum-utils device-mapper-persistent-data lvm2 
+dnf install -y yum-utils device-mapper-persistent-data lvm2 
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo 
-yum install -y docker-ce 
+dnf install -y docker-ce 
 # restart docker service
 systemctl enable --now docker 
 ```
@@ -158,26 +146,25 @@ systemctl restart containerd
 ```
 ### Add the Kubernetes repository to the Linux repository.
 ```sh
-cat >>/etc/yum.repos.d/kubernetes.repo <<EOF 
-[kubernetes] 
-name=Kubernetes 
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64 
-enabled=1 
-gpgcheck=1 
-repo_gpgcheck=1 
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg 
-       https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg 
+cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF 
 ```
 ### Install Kubernetes packages, including Kubelet, kubeadm, and kubectl.
 ```sh
-yum install -y kubeadm
+dnf install -y kubeadm
 ```
 ### Enable Kubelet service 
 ```sh
 systemctl enable --now kubelet
 ```
-### Join worker node to kubernetes cluster
+### Join worker node to kubernetes cluster (this is example, check command on master node)
 ```sh
 kubeadm join k8s-master01.local:6443 --token dw3d4j.dqe6m0rewrhzh5k4 --discovery-token-ca-cert-hash sha256:a9babf7f033fd6979b1ba89ff44c7dfe43f28ea2fbe1949fce5efccc511c465b
 ```
