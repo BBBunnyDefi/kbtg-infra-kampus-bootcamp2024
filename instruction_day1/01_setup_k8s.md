@@ -15,23 +15,18 @@ This tutorial demonstrates how to provision a Kubernetes cluster for this worksh
 ```sh
 sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 ```
-### Install NTP ( Chrony ) 
-install chrony package
+### Set time zone
 ```sh
-dnf install chrony -y 
+timedatectl set-timezone Asia/Bangkok
 ```
-modify configuration file to sync time with server.
-```sh
-#vi /etc/chrony.conf 
-server 158.108.212.149 
-```
-restart chrony service to apply the effect
-```sh
-systemctl –now enable chronyd 
-```
+
 ### Update all packages
 ```sh
 dnf update -y
+```
+### Reboot server
+```sh
+reboot
 ```
 ### Set hostname
 ```sh
