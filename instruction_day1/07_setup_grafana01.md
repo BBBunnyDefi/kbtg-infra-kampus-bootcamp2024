@@ -54,3 +54,5 @@ http://<public-ip-address>:3000/grafana
 ```
 
 ## Step-by-Step: How to import zabbix datasource to Grafana
+### Objective
+- [ ] Follow the instructions in the document named "example.docx"
