@@ -42,9 +42,9 @@ hostnamectl set-hostname k8s-master01.local
 ```sh
 # Use the private IP address of the EC2 instance to map host file.
 # vi /etc/hosts
-10.1.10.55  	k8s-master01.local
-10.1.10.56  	k8s-worker01.local
-10.1.10.57  	k8s-worker02.local
+172.31.47.31  k8s-master01.local
+172.31.47.32  k8s-worker01.local
+172.31.47.33  k8s-worker02.local
 ```
 ### Disable Swap 
 ```sh
