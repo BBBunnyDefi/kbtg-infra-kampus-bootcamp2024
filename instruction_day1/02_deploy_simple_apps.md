@@ -1,7 +1,7 @@
 # 02 Deploy Simple Application on Kubernetes Cluster
 Let's deploy simple application name "WORDPRESS" on your kubernetes cluster 
 , inspired from https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
+![Slide3](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/aa536acb-484e-4422-b50a-46b73b9af849)
 
 ## Getting Started
 This tutorial demonstrates how to deploy a WordPress site and a MySQL database using a Kubernetes cluster (excluding PersistentVolume for stateful purposes).
