@@ -1,5 +1,6 @@
 # 04_setup_ansible
 Ansible is an open-source automation tool that is used for configuration management, application deployment, task automation, and orchestration. Developed by Red Hat, Ansible simplifies complex tasks and processes, allowing users to manage and automate infrastructure more efficiently.
+![Slide5](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/b3e2052f-5430-4815-aa9d-fa2108e713c0)
 
 ## Objectives
 - Setup Ansible for this workshop to automate tasks in the future.
