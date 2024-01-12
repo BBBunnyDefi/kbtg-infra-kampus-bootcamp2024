@@ -83,6 +83,13 @@ systemctl enable --now kubelet
 # Initialize kubernetes cluster
 kubeadm init --apiserver-advertise-address=172.31.47.31 --pod-network-cidr=192.168.0.0/16
 ```
+To start using your cluster, you need to run the following as a regular user
+```sh
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
 ### Deploy Calico Network 
 ```sh
 kubectl create -f https://docs.projectcalico.org/manifests/calico.yaml
