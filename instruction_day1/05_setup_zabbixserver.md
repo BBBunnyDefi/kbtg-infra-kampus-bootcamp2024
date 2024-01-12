@@ -102,7 +102,7 @@ DBPassword=password
 Disable log_bin_trust_function_creators option after importing database schema
 ```sh
 mysql -uroot -p 
-password 
+#password prompt: password 
 # ---
 mysql> set global log_bin_trust_function_creators = 0; 
 mysql> quit;  
