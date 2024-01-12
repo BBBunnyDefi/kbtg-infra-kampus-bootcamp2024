@@ -1,6 +1,7 @@
 # 05_setup_zabbixserver
 Zabbix is an open-source monitoring solution designed to monitor the performance and availability of various network services, servers, and other IT resources. The Zabbix Server is a crucial component of the Zabbix monitoring system.
-![Slide5](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/cda69108-a1d6-449d-a022-2c0ddace3435)
+![Uploading Slide6.PNG…]()
+
 
 ## Objectives
 - Setup Zabbix Server for monitoring metrics on your system.
