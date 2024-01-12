@@ -38,11 +38,9 @@ Prepare ansible inventory (hosts)
 ```sh
 #vi hosts 
 [myhost] 
-172.31.0.1 
-172.31.0.2
-172.31.0.3
-172.31.0.4
-172.31.0.5
+k8s-master01.local
+k8s-worker01.local
+k8s-worker02.local
 
 [all:vars] 
 ansible_connection=ssh 
