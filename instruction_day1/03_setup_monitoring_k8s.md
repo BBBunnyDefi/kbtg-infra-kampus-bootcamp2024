@@ -49,13 +49,17 @@ kubectl get deployments --namespace=monitoring
 kubectl get pods --namespace=monitoring 
 kubectl create -f prometheus-service.yaml --namespace=monitoring 
 ```
-
-### Prepare Kube-prometheus
+Verify that the Service is running by running the following command:
 ```sh
-git clone https://github.com/prometheus-operator/kube-prometheus.git 
-cd kube-prometheus 
-kubectl create -f manifests/setup 
-kubectl create -f manifests/ 
-kubectl get pods -n monitoring 
-kubectl get svc -n monitoring 
+kubectl get svc -n monitoring
+```
+The response should be like this:
+```sh
+NAME                 TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+prometheus-service   NodePort   10.99.133.163   <none>        8080:30000/TCP   2m4s
+```
+
+### Copy the Public IP address for master node, and load the page in your browser to view your site with port 30000
+```sh
+http://<master-ipaddress>:30000
 ```
