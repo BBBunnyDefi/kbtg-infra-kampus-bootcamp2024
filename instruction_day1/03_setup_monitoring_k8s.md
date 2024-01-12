@@ -35,7 +35,7 @@ k8s-worker02.local   69m          3%     1526Mi          20%
 ```
 
 ## 2) Setup Prometheus for kubernetes cluster
-installl git
+### installl git
 ```sh
 dnf install git
 ```
@@ -51,7 +51,7 @@ cd kube-prometheus
 kubectl create -f manifests/setup
 kubectl create -f manifests/
 ```
-Verify that the Service is running by running the following command:
+### Verify that the Service is running by running the following command:
 ```sh
 kubectl get svc -n monitoring
 ```
@@ -69,11 +69,11 @@ prometheus-k8s          ClusterIP   10.101.106.161   <none>        9090/TCP     
 prometheus-operated     ClusterIP   None             <none>        9090/TCP                     16s
 prometheus-operator     ClusterIP   None             <none>        8443/TCP                     28s
 ```
-Change network from ClusterIP to NodePort
+### Change network from ClusterIP to NodePort
 ```sh
 kubectl --namespace monitoring patch svc prometheus-k8s -p '{"spec": {"type": "NodePort"}}'
 ```
-Verify that the Service is running by running the following command:
+### Verify that the Service is running by running the following command:
 ```sh
 kubectl get svc -n monitoring | grep prometheus-k8s
 ```
@@ -82,7 +82,7 @@ The response should be like this:
 prometheus-k8s          NodePort    10.101.106.161   <none>        9090:30957/TCP               6m3s
 ```
 
-### Copy the Public IP address for master node, and load the page in your browser to view your site with port 30957
+### Copy the Public IP address for master node, and load the page in your browser to view your site with 30957 (see port from service prometheus-k8s )
 ```sh
 http://<master-ipaddress>:30957
 ```
