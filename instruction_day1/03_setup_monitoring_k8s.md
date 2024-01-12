@@ -1,5 +1,6 @@
 # 03_setup_monitoring_k8s
 Metrics Server is a scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines.
+![Slide4](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/9c0b5b49-3de9-407d-a349-3f0a233372fe)
 
 
 ## 1) install Metric servers
