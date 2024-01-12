@@ -13,25 +13,14 @@
 - no prerequisites
 
 ## 1) Day2-Operation | Restore/Backup
-> [!NOTE]
-> The following instruction for the [aws-console].
-
-### Objective
 - [ ] The backup policy has an RPO of 1 hour.
 - [ ] Follow the instructions in the document named "example.docx"
 
 ## 2) Day2-Operation | Patching
-> [!NOTE]
-> The following instruction for the [aws-console].
-
 ### Objective
 - [ ] Follow the instructions in the document named "example.docx"
 
-
-## 2) Day2-Operation | Hardening
-> [!NOTE]
-> The following instruction for the [aws-console].
-
+## 3) Day2-Operation | Hardening
 ### Objective
 - [ ] The Ansible playbook YAML has been uploaded to ...
 - [ ] Follow the instructions in the document named "example.docx"
