@@ -35,6 +35,11 @@ k8s-worker02.local   69m          3%     1526Mi          20%
 ```
 
 ## 2) Setup Prometheus for kubernetes cluster
+installl git
+```sh
+dnf install git
+```
+
 ### Prepare Prometheus packages
 ```sh
 git clone https://github.com/bibinwilson/kubernetes-prometheus 
