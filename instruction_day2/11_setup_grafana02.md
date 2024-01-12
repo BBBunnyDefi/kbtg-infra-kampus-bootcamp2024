@@ -1,4 +1,4 @@
-# 07_setup_grafana02
+# 11_setup_grafana02
 Let's continue setting up Grafana for the ELK Stack, which can capture logs from your application and convert them into dashboards for monitoring purposes.
 
 ## Objectives
