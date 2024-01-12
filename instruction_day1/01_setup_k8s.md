@@ -1,10 +1,5 @@
 # 01 Setup Kubernetes Cluster
-
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-...
-
-## Getting Started
-This tutorial demonstrates how to provision k8s cluster 
+This tutorial demonstrates how to provision a Kubernetes cluster for this workshop.
 
 ## Objectives
 - Create kubernetes cluster which 1 master node and 2 worker nodes
