@@ -86,7 +86,7 @@ ansible -i hosts myhost -m ping
     become: yes 
     become_user: root 
     tasks: 
-      - name: create username 
+      - name: "Create User"
         user: 
           name: "{{ item }}" 
           group: bin 

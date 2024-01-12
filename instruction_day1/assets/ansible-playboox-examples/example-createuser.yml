@@ -1,0 +1,13 @@
+- name: Create User for EC2 
+  hosts: myhost 
+  become: yes 
+  become_user: root 
+  tasks: 
+    - name: "Create User" 
+      user: 
+        name: "{{ item }}" 
+        group: bin 
+        shell: /bin/bash 
+        home: "/home/{{ item }}" 
+      with_items: 
+        - example-user
