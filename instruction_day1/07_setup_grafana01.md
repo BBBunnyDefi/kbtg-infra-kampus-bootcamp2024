@@ -1,40 +1,56 @@
-# 04_setup_ansible
-Ansible is an open-source automation tool that is used for configuration management, application deployment, task automation, and orchestration. Developed by Red Hat, Ansible simplifies complex tasks and processes, allowing users to manage and automate infrastructure more efficiently.
+# 07_setup_grafana01
+Grafana is an open-source platform for monitoring and observability, designed to visualize and analyze metrics from various data sources. It is commonly used in conjunction with time-series databases, such as Prometheus, InfluxDB, and Graphite, to create dynamic and interactive dashboards for monitoring applications, systems, and infrastructure. Here's an overview of Grafana's key features and functionalities:
 
 ## Objectives
-- Setup Ansible for this workshop to automate tasks in the future.
+- Setup Grafana for this workshop to Monitoring your system via Dashboard.
+- Setup Grafana Datasource: Zabbix - to monitoring machine metrics
+- Setup Grafana Datasource: Prometheus - to monitoring kubernetes metrics
+- Learn how to use Grafana to set up a monitoring solution for your system.
 
 ## Expected Outcome
-- Ansible is ready to use.
+- Grafana is ready to use.
 
 ## Prerequisites
 - no prerequisites
 
 ## Installation
 > [!NOTE]
-> The following instruction for the [helper] only.
+> The following instruction for the [zabbix-server] only.
 
-Install ansible packages
+### Prepare Grafana repository by create .repo file at /etc/yum.repos.d/grafana.repo 
 ```sh
-dnf install -y epel-release 
-dnf install -y ansible 
+#vi /etc/yum.repos.d/grafana.repo 
+[grafana] 
+name=grafana 
+baseurl=https://packages.grafana.com/oss/rpm 
+repo_gpgcheck=1 
+enabled=1 
+gpgcheck=1 
+gpgkey=https://packages.grafana.com/gpg.key 
+sslverify=1 
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt 
+```
+### Install Grafana
+```sh
+dnf install grafana -y
+```
+### Install Plugin zabbix
+```sh
+grafana-cli plugins install alexanderzobnin-zabbix-app
+```
+### Enable Grafana service
+```sh
+systemctl enable --now grafana-server.service
+```
+### (optional) On my laptop create tunnel connect  to EC2 
+```sh
+#ssh -L 3000:private_ip:3000 cloud-user@public_ip -i dl-labs-20.pem 
 ```
 
 ## Verify
-Run this command to get ansible version
+Open Grafana UI web page
 ```sh
-ansible -version 
+http://<public-ip-address>:3000/zabbix
 ```
-The response should be like this
-```sh
-# ansible --version
-ansible [core 2.16.2]
-  config file = /etc/ansible/ansible.cfg
-  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/lib/python3.11/site-packages/ansible
-  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
-  executable location = /bin/ansible
-  python version = 3.11.5 (main, Oct 25 2023, 14:45:39) [GCC 8.5.0 20210514 (Red Hat 8.5.0-21)] (/usr/bin/python3.11)
-  jinja version = 3.1.2
-  libyaml = True 
-```
+
+## Picture: How to import zabbix datasource
