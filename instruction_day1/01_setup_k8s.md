@@ -1,6 +1,6 @@
 # 01 Setup Kubernetes Cluster
 This tutorial demonstrates how to provision a Kubernetes cluster for this workshop.
-![Slide1](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/6526de49-9e4f-4460-9aed-6edd367596d1)
+![Slide2](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/c50f8536-46f2-4da1-b4a9-4f161ec0d4e2)
 
 ## Objectives
 - Create kubernetes cluster which 1 master node and 2 worker nodes
