@@ -1,8 +1,8 @@
 # 08_setup_filebeat
 You deploy Filebeat as a DaemonSet to ensure there’s a running instance on each node of the cluster.
+![Slide9](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/e91a3c6f-8151-4c6a-8360-c98bbc50fd31)
 
 The container logs host folder (/var/log/containers) is mounted on the Filebeat container. Filebeat starts an input for the files and begins harvesting them as soon as they appear in the folder.
-
 Everything is deployed under the "logging" namespace.
 
 ## Objectives

@@ -1,5 +1,6 @@
 # 01 Setup Kubernetes Cluster
 This tutorial demonstrates how to provision a Kubernetes cluster for this workshop.
+![Slide2](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/c50f8536-46f2-4da1-b4a9-4f161ec0d4e2)
 
 ## Objectives
 - Create kubernetes cluster which 1 master node and 2 worker nodes
@@ -24,7 +25,7 @@ timedatectl set-timezone Asia/Bangkok
 ```sh
 dnf update -y
 ```
-### Reboot server
+### Reboot server to take effect
 ```sh
 reboot
 ```
@@ -33,9 +34,9 @@ reboot
 hostnamectl set-hostname k8s-master01.local
 ```
 ### Set local DNS 
+Edit file /etc/hosts
 ```sh
 # Use the private IP address of the EC2 instance to map host file.
-# vi /etc/hosts
 172.31.47.31  k8s-master01.local
 172.31.47.32  k8s-worker01.local
 172.31.47.33  k8s-worker02.local
@@ -83,6 +84,14 @@ systemctl enable --now kubelet
 # Initialize kubernetes cluster
 kubeadm init --apiserver-advertise-address=172.31.47.31 --pod-network-cidr=192.168.0.0/16
 ```
+To start using your cluster, you need to run the following as a regular user
+```sh
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+export KUBECONFIG=/etc/kubernetes/admin.conf
+```
+
 ### Deploy Calico Network 
 ```sh
 kubectl create -f https://docs.projectcalico.org/manifests/calico.yaml
@@ -110,7 +119,7 @@ timedatectl set-timezone Asia/Bangkok
 ```sh
 dnf update -y
 ```
-### Reboot server
+### Reboot server to take effect
 ```sh
 reboot
 ```
@@ -119,9 +128,9 @@ reboot
 hostnamectl set-hostname k8s-workerxx.local
 ```
 ### Set local DNS 
+Edit file /etc/hosts
 ```sh
 # Use the private IP address of the EC2 instance to map host file.
-# vi /etc/hosts
 172.31.47.31  k8s-master01.local
 172.31.47.32  k8s-worker01.local
 172.31.47.33  k8s-worker02.local

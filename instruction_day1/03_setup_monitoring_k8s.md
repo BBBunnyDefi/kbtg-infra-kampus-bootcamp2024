@@ -1,5 +1,6 @@
 # 03_setup_monitoring_k8s
 Metrics Server is a scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines.
+![Slide4](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/9c0b5b49-3de9-407d-a349-3f0a233372fe)
 
 
 ## 1) install Metric servers
@@ -49,13 +50,17 @@ kubectl get deployments --namespace=monitoring
 kubectl get pods --namespace=monitoring 
 kubectl create -f prometheus-service.yaml --namespace=monitoring 
 ```
-
-### Prepare Kube-prometheus
+Verify that the Service is running by running the following command:
 ```sh
-git clone https://github.com/prometheus-operator/kube-prometheus.git 
-cd kube-prometheus 
-kubectl create -f manifests/setup 
-kubectl create -f manifests/ 
-kubectl get pods -n monitoring 
-kubectl get svc -n monitoring 
+kubectl get svc -n monitoring
+```
+The response should be like this:
+```sh
+NAME                 TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+prometheus-service   NodePort   10.99.133.163   <none>        8080:30000/TCP   2m4s
+```
+
+### Copy the Public IP address for master node, and load the page in your browser to view your site with port 30000
+```sh
+http://<master-ipaddress>:30000
 ```

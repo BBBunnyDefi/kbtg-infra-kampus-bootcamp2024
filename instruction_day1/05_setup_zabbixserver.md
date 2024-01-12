@@ -1,5 +1,7 @@
 # 05_setup_zabbixserver
 Zabbix is an open-source monitoring solution designed to monitor the performance and availability of various network services, servers, and other IT resources. The Zabbix Server is a crucial component of the Zabbix monitoring system.
+![Slide6](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/35c49f15-7b80-4bd5-8929-ee4aa944ccf5)
+
 
 ## Objectives
 - Setup Zabbix Server for monitoring metrics on your system.
@@ -16,24 +18,7 @@ Zabbix is an open-source monitoring solution designed to monitor the performance
 
 ### Disable selinux
 ```sh
-#vi /etc/selinux/config 
-SELINUX=disabled 
-```
-
-### Install NTP ( Chrony ) 
-prepare chrony packages
-```sh
-dnf install chrony -y 
-```
-
-```sh
-vi /etc/chrony.conf 
-# > ใส่ # ข้างหน้า pool 2.centos.pool.ntp.org iburst 
-server 158.108.212.149 
-```
-restart chrony service
-```sh
-systemctl –now enable chronyd
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 ```
 
 ### Set time zone Asia/Bangkok 
@@ -45,12 +30,14 @@ timedatectl set-timezone Asia/Bangkok
 ```sh
 dnf update -y 
 ```
-
+### Reboot server
+```sh
+reboot
+```
 ### Set hostname
 ```sh
 hostnamectl set-hostname zabbix-server.local
 ```
-
 ### Reboot server to take effect
 ```sh
 reboot
@@ -117,7 +104,7 @@ DBPassword=password
 Disable log_bin_trust_function_creators option after importing database schema
 ```sh
 mysql -uroot -p 
-password 
+#password prompt: password 
 # ---
 mysql> set global log_bin_trust_function_creators = 0; 
 mysql> quit;  

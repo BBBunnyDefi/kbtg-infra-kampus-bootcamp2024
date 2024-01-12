@@ -1,5 +1,6 @@
 # 11_setup_grafana02
 Let's continue setting up Grafana for the ELK Stack, which can capture logs from your application and convert them into dashboards for monitoring purposes.
+![Slide11](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/645add32-b6c3-48e6-99cc-44a42eed74a9)
 
 ## Objectives
 - Set up Grafana Datasource: Elasticsearch - to monitor the logging of your application and create new dashboards from them.

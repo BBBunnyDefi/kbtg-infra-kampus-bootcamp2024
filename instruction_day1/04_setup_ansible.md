@@ -1,5 +1,6 @@
 # 04_setup_ansible
 Ansible is an open-source automation tool that is used for configuration management, application deployment, task automation, and orchestration. Developed by Red Hat, Ansible simplifies complex tasks and processes, allowing users to manage and automate infrastructure more efficiently.
+![Slide5](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/b3e2052f-5430-4815-aa9d-fa2108e713c0)
 
 ## Objectives
 - Setup Ansible for this workshop to automate tasks in the future.
@@ -13,6 +14,11 @@ Ansible is an open-source automation tool that is used for configuration managem
 ## Installation
 > [!NOTE]
 > The following instruction for the [helper] only.
+
+### Set time zone
+```sh
+timedatectl set-timezone Asia/Bangkok
+```
 
 ### Install ansible packages
 ```sh
@@ -34,15 +40,13 @@ mkdir ansible
 cd ansible 
 ```
 
-Prepare ansible inventory (hosts)
+Prepare ansible inventory (hosts).
 ```sh
 #vi hosts 
 [myhost] 
-172.31.0.1 
-172.31.0.2
-172.31.0.3
-172.31.0.4
-172.31.0.5
+k8s-master01.local
+k8s-worker01.local
+k8s-worker02.local
 
 [all:vars] 
 ansible_connection=ssh 
