@@ -34,7 +34,7 @@ mkdir ansible
 cd ansible 
 ```
 
-Prepare ansible inventory (hosts)
+Prepare ansible inventory (hosts).
 ```sh
 #vi hosts 
 [myhost] 
