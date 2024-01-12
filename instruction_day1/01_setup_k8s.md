@@ -13,8 +13,7 @@ This tutorial demonstrates how to provision a Kubernetes cluster for this worksh
 > These instruction is apply for master node (k8s-master01)
 ### Disable selinux 
 ```sh
-#vi /etc/selinux/config 
-SELINUX=disabled 
+sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 ```
 ### Install NTP ( Chrony ) 
 install chrony package
@@ -42,9 +41,9 @@ hostnamectl set-hostname k8s-master01.local
 ```sh
 # Use the private IP address of the EC2 instance to map host file.
 # vi /etc/hosts
-10.1.10.55  	k8s-master01.local
-10.1.10.56  	k8s-worker01.local
-10.1.10.57  	k8s-worker02.local
+172.31.47.31  k8s-master01.local
+172.31.47.32  k8s-worker01.local
+172.31.47.33  k8s-worker02.local
 ```
 ### Disable Swap 
 ```sh
@@ -107,8 +106,7 @@ kubeadm token create --print-join-command
 
 ### Disable selinux 
 ```sh
-#vi /etc/selinux/config 
-SELINUX=disabled 
+sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
 ```
 ### Install NTP ( Chrony ) 
 install chrony package
@@ -136,9 +134,9 @@ hostnamectl set-hostname worker-56.local
 ```sh
 # Use the private IP address of the EC2 instance to map host file.
 # vi /etc/hosts
-10.1.10.55  	k8s-master01.local
-10.1.10.56  	k8s-worker01.local
-10.1.10.57  	k8s-worker02.local
+172.31.47.31  k8s-master01.local
+172.31.47.32  k8s-worker01.local
+172.31.47.33  k8s-worker02.local
 ```
 ### Disable Swap 
 ```sh
@@ -181,7 +179,7 @@ systemctl enable --now kubelet
 ```
 ### Join worker node to kubernetes cluster
 ```sh
-kubeadm join 10.1.10.55:6443 --token dw3d4j.dqe6m0rewrhzh5k4 --discovery-token-ca-cert-hash sha256:a9babf7f033fd6979b1ba89ff44c7dfe43f28ea2fbe1949fce5efccc511c465b
+kubeadm join k8s-master01.local:6443 --token dw3d4j.dqe6m0rewrhzh5k4 --discovery-token-ca-cert-hash sha256:a9babf7f033fd6979b1ba89ff44c7dfe43f28ea2fbe1949fce5efccc511c465b
 ```
 
 ## Verify
