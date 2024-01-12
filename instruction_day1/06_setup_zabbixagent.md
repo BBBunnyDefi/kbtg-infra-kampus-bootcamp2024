@@ -1,5 +1,5 @@
 # 06_setup_zabbixagent
-The Zabbix Agent is a crucial component of the Zabbix monitoring system, responsible for collecting data from the systems it runs on and sending that information to the Zabbix Server for processing. Here's an overview of the Zabbix Agent:
+The Zabbix Agent is a crucial component of the Zabbix monitoring system, responsible for collecting data from the systems it runs on and sending that information to the Zabbix Server for processing.
 
 ## Objectives
 - Setup Zabbix Server for monitoring metrics on your system.

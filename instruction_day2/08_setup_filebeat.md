@@ -3,9 +3,7 @@ You deploy Filebeat as a DaemonSet to ensure there’s a running instance on eac
 
 The container logs host folder (/var/log/containers) is mounted on the Filebeat container. Filebeat starts an input for the files and begins harvesting them as soon as they appear in the folder.
 
-Everything is deployed under the "infra-logging" namespace.
-<!-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
-
+Everything is deployed under the "logging" namespace.
 
 ## Objectives
 - Send container logs to the ELK system and display them on the Kibana console.

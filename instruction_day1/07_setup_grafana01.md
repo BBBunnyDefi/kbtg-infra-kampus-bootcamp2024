@@ -1,5 +1,5 @@
 # 07_setup_grafana01
-Grafana is an open-source platform for monitoring and observability, designed to visualize and analyze metrics from various data sources. It is commonly used in conjunction with time-series databases, such as Prometheus, InfluxDB, and Graphite, to create dynamic and interactive dashboards for monitoring applications, systems, and infrastructure. Here's an overview of Grafana's key features and functionalities:
+Grafana is an open-source platform for monitoring and observability, designed to visualize and analyze metrics from various data sources. It is commonly used in conjunction with time-series databases, such as Prometheus, InfluxDB, and Graphite, to create dynamic and interactive dashboards for monitoring applications, systems, and infrastructure.
 
 ## Objectives
 - Setup Grafana for this workshop to Monitoring your system via Dashboard.
