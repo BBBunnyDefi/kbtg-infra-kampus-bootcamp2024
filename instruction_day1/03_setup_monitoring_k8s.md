@@ -42,18 +42,14 @@ dnf install git
 
 ### Prepare Prometheus packages
 ```sh
-git clone https://github.com/bibinwilson/kubernetes-prometheus 
+git clone -b release-0.7 https://github.com/prometheus-operator/kube-prometheus.git
 ```
 
 ### Prepare kubernetes resources for prometheus
 ```sh
-kubectl create namespace monitoring 
-kubectl create -f clusterRole.yaml 
-kubectl create -f config-map.yaml 
-kubectl create  -f prometheus-deployment.yaml 
-kubectl get deployments --namespace=monitoring 
-kubectl get pods --namespace=monitoring 
-kubectl create -f prometheus-service.yaml --namespace=monitoring 
+cd kube-prometheus
+kubectl create -f manifests/setup
+kubectl create -f manifests/
 ```
 Verify that the Service is running by running the following command:
 ```sh
@@ -62,10 +58,31 @@ kubectl get svc -n monitoring
 The response should be like this:
 ```sh
 NAME                 TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-prometheus-service   NodePort   10.99.133.163   <none>        8080:30000/TCP   2m4s
+NAME                    TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+alertmanager-main       ClusterIP   10.96.49.118     <none>        9093/TCP                     22s
+alertmanager-operated   ClusterIP   None             <none>        9093/TCP,9094/TCP,9094/UDP   23s
+grafana                 ClusterIP   10.96.5.162      <none>        3000/TCP                     19s
+kube-state-metrics      ClusterIP   None             <none>        8443/TCP,9443/TCP            18s
+node-exporter           ClusterIP   None             <none>        9100/TCP                     17s
+prometheus-adapter      ClusterIP   10.105.3.238     <none>        443/TCP                      17s
+prometheus-k8s          ClusterIP   10.101.106.161   <none>        9090/TCP                     15s
+prometheus-operated     ClusterIP   None             <none>        9090/TCP                     16s
+prometheus-operator     ClusterIP   None             <none>        8443/TCP                     28s
+```
+Change network from ClusterIP to NodePort
+```sh
+kubectl --namespace monitoring patch svc prometheus-k8s -p '{"spec": {"type": "NodePort"}}'
+```
+Verify that the Service is running by running the following command:
+```sh
+kubectl get svc -n monitoring | grep prometheus-k8s
+```
+The response should be like this:
+```sh
+prometheus-k8s          NodePort    10.101.106.161   <none>        9090:30957/TCP               6m3s
 ```
 
-### Copy the Public IP address for master node, and load the page in your browser to view your site with port 30000
+### Copy the Public IP address for master node, and load the page in your browser to view your site with port 30957
 ```sh
-http://<master-ipaddress>:30000
+http://<master-ipaddress>:30957
 ```
