@@ -18,17 +18,18 @@ Kibana is an open-source data visualization and exploration tool designed to wor
 
 ### Access kibana URL
 ```sh
-http://kibana-alb-8803233.ap-southeast-1.elb.amazonaws.com/
+http://kibana-alb-8803233.ap-southeast-1.elb.amazonaws.com
 ```
 
 With these credential for each group.
-| Username  | Password |
-| ------------- | ------------- |
-| group01  | group01  |
-| group02  | group02  |
-| group03  | group03  |
-| group04  | group04  |
-| group05  | group05  |
+| Group Number | Username  | Password |
+| ------------- | ------------- | ------------- |
+| group01  | group01  | group01  |
+| group02  | group02  | group02  |
+| group03  | group03  | group03  |
+| group04  | group04  | group04  |
+| group05  | group05  | group05  |
+
 
 ## Verify the following instructions
 - [ ] Ensure the Kibana Space for your group already exists.
