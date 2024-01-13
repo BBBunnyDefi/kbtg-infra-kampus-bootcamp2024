@@ -119,7 +119,7 @@ http://host/zabbix
 default user / pass <Admin/zabbix>
 ```
 
-### On my laptop create tunnel connect to your EC2
+### On my laptop create tunnel connect to your EC2 (optional)
 ```sh
 ssh -L 8081:private_ip:80 cloud-user@public_ip -i dl-labs-20.pem
 ```
