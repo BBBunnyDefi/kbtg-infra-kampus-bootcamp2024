@@ -31,10 +31,9 @@ http://<public-ip-address>:3000/grafana
 4. If you are using HTTPS, check the "Enable TLS" box and provide the necessary information. 
 5. Scroll down to the "Auth" section if you have authentication enabled on your Elasticsearch cluster. Provide the username and password. 
 6. Elasticsearch details
-   
-   <img width="428" alt="grafana-elk02" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/dc39aeae-62ac-41c2-8eb1-60f3d7061670">
     - Index name 
-    - Time field name 
+    - Time field name    
+   <img width="428" alt="grafana-elk02" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/dc39aeae-62ac-41c2-8eb1-60f3d7061670">
 8. Click on "Save & Test" to verify the connection. If everything is set up correctly.
 
 ## Step-by-Step: How to Create Visualizations on Grafana Dashboard Using Elasticsearch Datasource
@@ -49,5 +48,6 @@ http://<public-ip-address>:3000/grafana
 
 # Must Have !! 
 Create a requirement visualization to display the HTTP response code of WordPress as shown below:
+
 ![grafana elk03](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/ac4ae92f-6e1c-4805-b005-12c14557ed83)
 
