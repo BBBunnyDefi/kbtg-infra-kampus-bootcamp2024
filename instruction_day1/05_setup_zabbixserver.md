@@ -14,7 +14,7 @@ Zabbix is an open-source monitoring solution designed to monitor the performance
 
 ## 1) Installation | Prepare Server 
 > [!NOTE]
-> The following instruction for the [zabbis-erver] only.
+> The following instruction for the [zabbis-server] only.
 
 ### Disable selinux
 ```sh
@@ -30,17 +30,13 @@ timedatectl set-timezone Asia/Bangkok
 ```sh
 dnf update -y 
 ```
-### Reboot server
+### Reboot server to take effect
 ```sh
 reboot
 ```
 ### Set hostname
 ```sh
 hostnamectl set-hostname zabbix-server.local
-```
-### Reboot server to take effect
-```sh
-reboot
 ```
 
 ## 2) Installation | Install Database Server
@@ -123,7 +119,7 @@ http://host/zabbix
 default user / pass <Admin/zabbix>
 ```
 
-### On my laptop create tunnel connect to your EC2
+### On my laptop create tunnel connect to your EC2 (optional)
 ```sh
 ssh -L 8081:private_ip:80 cloud-user@public_ip -i dl-labs-20.pem
 ```

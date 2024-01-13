@@ -58,7 +58,7 @@ ansible_become=true
 ## Verify
 Run this command to get ansible version
 ```sh
-ansible -version 
+ansible --version 
 ```
 The response should be like this
 ```sh
