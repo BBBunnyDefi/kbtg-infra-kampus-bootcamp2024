@@ -36,11 +36,12 @@ With these credential for each group.
 - [ ] Ensure the Kibana Space for your group already exists.
     - Check the space name (for example, Group1's space is 'Group01')
       <img width="837" alt="kibana02" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/df94c1c5-cba3-4d0f-9d65-45b65be6be2a">
-
+    
 - [ ] Ensure that the index of your group has already been sent to the centralized logging system.
     - Click Stack Management >> Index Management
       <img width="703" alt="kibana03" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/1b80e8d3-d421-4f79-b43a-5f5bc825a966">
     - Index should be name kbtg-kampus-group-<groupname> (for example, Group1's index name is 'kbtg-kampus-group-1')
+      
 - [ ] After checking the index, go to Data Views to identify the Elasticsearch data you want to explore. Create and name the index according to the index of each group.
     - In Kibana, go to the left sidebar and click on "Discover.
       <img width="956" alt="kibana04" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/749fa7fa-a8bc-4059-a6ce-12dd774a98fa">
