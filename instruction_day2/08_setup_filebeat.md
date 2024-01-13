@@ -33,6 +33,7 @@ curl -LO https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp
 ```
 
 modify filebeat-configmap.yml at line23: change value from bbtg-group-x to 'bbtg-group-<group_number>'
+<img width="501" alt="filebeat-modify-config" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/5cac198b-69d6-4369-9b2a-241dfaf844fb">
 ```sh
 vi filebeat-configmap.yaml
 ```
