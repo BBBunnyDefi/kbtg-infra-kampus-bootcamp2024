@@ -1,6 +1,6 @@
 # 09_setup_kibana-elk
 Kibana is an open-source data visualization and exploration tool designed to work with the Elasticsearch data store. Together with Elasticsearch, Logstash, and Beats, Kibana forms what is known as the ELK Stack (Elasticsearch, Logstash, Kibana).
-<img width="625" alt="kibana-login" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/1c0736b3-d4a1-4a25-92b0-07fb6f4308e5">
+<img width="958" alt="kibana-login" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/b371a581-839a-4287-a1c0-7316c18a5878">
 
 ## Objectives
 - Setup Kibana for this workshop to see Logginng on your system.
@@ -34,8 +34,14 @@ With these credential for each group.
 
 ## Verify the following instructions
 - [ ] Ensure the Kibana Space for your group already exists.
-    - Check the space name (for example, Group A is named 'KBTG Bootcamp 1')
+    - Check the space name (for example, Group1's space is 'Group01')
+      <img width="837" alt="kibana02" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/df94c1c5-cba3-4d0f-9d65-45b65be6be2a">
+
 - [ ] Ensure that the index of your group has already been sent to the centralized logging system.
-    - Click Stack Management >> Index Management  
+    - Click Stack Management >> Index Management
+      <img width="703" alt="kibana03" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/1b80e8d3-d421-4f79-b43a-5f5bc825a966">
+    - Index should be name kbtg-kampus-group-<groupname> (for example, Group1's index name is 'kbtg-kampus-group-1')
 - [ ] After checking the index, go to Data Views to identify the Elasticsearch data you want to explore. Create and name the index according to the index of each group.
-    - In Kibana, go to the left sidebar and click on "Discover. 
+    - In Kibana, go to the left sidebar and click on "Discover.
+      <img width="956" alt="kibana04" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/749fa7fa-a8bc-4059-a6ce-12dd774a98fa">
+
