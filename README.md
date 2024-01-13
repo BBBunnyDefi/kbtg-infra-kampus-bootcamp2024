@@ -17,9 +17,3 @@ Welcome to K-Infra Bootcamp - Intensive Workshop Day #1
 - [06 Setup Zabbix Agent](instruction_day1/06_setup_zabbixagent.md)
 - [07 Setup Grafana01](instruction_day1/07_setup_grafana01.md)
 
-## Day2
-- [08 Setup Filebeat](instruction_day2/08_setup_filebeat.md)
-- [09 Setup Kibana (ELK Stack)](instruction_day2/09_setup_kibana-elk.md)
-- [10 Day2 Operation](instruction_day2/10_day2_operation.md)
-- [11 Setup Grafana02](instruction_day2/11_setup_grafana02.md)
-- [12 Surprise!](instruction_day2/12_k8s_situation_example.md)
