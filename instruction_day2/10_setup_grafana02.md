@@ -47,7 +47,9 @@ http://<public-ip-address>:3000/grafana
 6. Configure the axes, legend, and other visualization options based on your requirements.
 
 # 📌 Must Have !! 
-Create a requirement visualization to display the "HTTP response code" of WordPress as shown below:
+- [ ] 1.Create a requirement visualization to display the "HTTP response code" of WordPress as shown below:
 
 ![grafana elk03](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/ac4ae92f-6e1c-4805-b005-12c14557ed83)
+
+- [ ] 2.Create a requirement visualization to display the "HTTP Responsetime by service" of WordPress as shown below:
 
