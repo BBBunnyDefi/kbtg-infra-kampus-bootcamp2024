@@ -14,7 +14,7 @@ Zabbix is an open-source monitoring solution designed to monitor the performance
 
 ## 1) Installation | Prepare Server 
 > [!NOTE]
-> The following instruction for the [zabbis-erver] only.
+> The following instruction for the [zabbis-server] only.
 
 ### Disable selinux
 ```sh
