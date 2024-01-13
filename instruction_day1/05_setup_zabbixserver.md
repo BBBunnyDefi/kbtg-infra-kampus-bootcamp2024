@@ -30,17 +30,13 @@ timedatectl set-timezone Asia/Bangkok
 ```sh
 dnf update -y 
 ```
-### Reboot server
+### Reboot server to take effect
 ```sh
 reboot
 ```
 ### Set hostname
 ```sh
 hostnamectl set-hostname zabbix-server.local
-```
-### Reboot server to take effect
-```sh
-reboot
 ```
 
 ## 2) Installation | Install Database Server
