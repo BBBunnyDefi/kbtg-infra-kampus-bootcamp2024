@@ -71,9 +71,9 @@ spec:
       securityContext:
         runAsUser: 0
       terminationGracePeriodSeconds: 30
-      tolerations:
-      - effect: NoSchedule
-        key: node-role.kubernetes.io/master
+      # tolerations:
+      # - effect: NoSchedule
+      #   key: node-role.kubernetes.io/master
       volumes:
         - name: config
           configMap:
