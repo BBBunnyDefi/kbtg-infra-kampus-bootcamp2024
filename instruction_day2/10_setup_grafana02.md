@@ -38,7 +38,6 @@ http://<public-ip-address>:3000/grafana
 
 ## Step-by-Step: How to Create Visualizations on Grafana Dashboard Using Elasticsearch Datasource
 
-
 1. In Grafana, navigate to the "New" icon on the left sidebar and click on "Dashboard" to create a new dashboard. 
 2. Click on "Add visulization." 
 3. In the panel settings, you need to select the Elasticsearch data source you added earlier. 
@@ -52,6 +51,4 @@ http://<public-ip-address>:3000/grafana
 ![grafana elk03](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/ac4ae92f-6e1c-4805-b005-12c14557ed83)
 
 - [ ] 2.Create a requirement visualization to display the "HTTP Responsetime by service" of WordPress as shown below:
-<img width="703" alt="elastic-query" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/786d7ad7-6df3-454b-a956-ebfacb0e89fe">
-
-
+<img width="872" alt="elastic-query" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/a2f87db8-9e9a-4519-896c-297255143ff4">
