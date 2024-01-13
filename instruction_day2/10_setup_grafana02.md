@@ -23,17 +23,22 @@ http://<public-ip-address>:3000/grafana
 ```
 
 ### Setup Elasticsearch datasource on Grafana
+<img width="869" alt="grafana-elk01" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/54c2689f-1579-48c2-a59c-0bf3ede50902">
+
 1. Access the Data Sources Section:In Grafana, click on the gear icon (⚙️) in the left sidebar to open the main menu.  Select "Data Sources" under the "Configuration" section. 
 2. In the "Choose a data source" section, search for "Elasticsearch" or scroll down to find it.Click on the Elasticsearch option. 
 3. In the "HTTP" section, provide the URL of your Elasticsearch cluster. It should look like https://13.214.58.236:9200 
 4. If you are using HTTPS, check the "Enable TLS" box and provide the necessary information. 
 5. Scroll down to the "Auth" section if you have authentication enabled on your Elasticsearch cluster. Provide the username and password. 
-6. Elasticsearch details  
+6. Elasticsearch details
+   <img width="428" alt="grafana-elk02" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/dc39aeae-62ac-41c2-8eb1-60f3d7061670">
     - Index name 
     - Time field name 
-7. Click on "Save & Test" to verify the connection. If everything is set up correctly.
+8. Click on "Save & Test" to verify the connection. If everything is set up correctly.
 
 ## Step-by-Step: How to Create Visualizations on Grafana Dashboard Using Elasticsearch Datasource
+![grafana elk03](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/ac4ae92f-6e1c-4805-b005-12c14557ed83)
+
 1. In Grafana, navigate to the "New" icon on the left sidebar and click on "Dashboard" to create a new dashboard. 
 
 2. Click on "Add visulization." 
