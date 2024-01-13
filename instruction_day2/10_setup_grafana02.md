@@ -46,7 +46,7 @@ http://<public-ip-address>:3000/grafana
 5. Choose the visualization type that suits your data. Grafana supports various visualization types such as Graph, Singlestat, Table, etc. 
 6. Configure the axes, legend, and other visualization options based on your requirements.
 
-# Must Have !! 
+# 📌 Must Have !! 
 Create a requirement visualization to display the HTTP response code of WordPress as shown below:
 
 ![grafana elk03](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/ac4ae92f-6e1c-4805-b005-12c14557ed83)
