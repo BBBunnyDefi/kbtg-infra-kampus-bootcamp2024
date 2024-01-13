@@ -1,11 +1,9 @@
 
-<img width="711" alt="capability" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/a54b3b5d-564c-4f7b-b2cf-5ce1ce09cba1">
-
 # Title
 
-<!-- Add Image Here -->
 
-One Paragraph of the project description
+<img width="711" alt="capability" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/a54b3b5d-564c-4f7b-b2cf-5ce1ce09cba1">
+
 
 <!-- Add Badge Here (https://shields.io/) -->
 
@@ -50,7 +48,7 @@ run <environment>
 ### Test
 
 Run under scripts
-
+git 
 ```sh
 test <environment>
 ```
