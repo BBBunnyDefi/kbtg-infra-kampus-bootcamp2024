@@ -15,13 +15,16 @@
 
 ## 1) Day2-Operation | Restore/Backup
 - [ ] The backup policy has an RPO of 1 hour.
-- [ ] Follow the instructions in the document named "example.docx"
+- [ ] Follow the instructions in the document named "11_day2_operation.pdf"
 
 ## 2) Day2-Operation | Patching
 ### Objective
-- [ ] Follow the instructions in the document named "example.docx"
+- [ ] Follow the instructions in the document named "11_day2_operation.pdf"
 
 ## 3) Day2-Operation | Hardening
 ### Objective
 - [ ] The Ansible playbook YAML has been uploaded to ...
-- [ ] Follow the instructions in the document named "example.docx"
+```sh
+https://raw.githubusercontent.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/main/instruction_day2/yaml/harden.yaml
+```
+- [ ] Follow the instructions in the document named "11_day2_operation.pdf"
