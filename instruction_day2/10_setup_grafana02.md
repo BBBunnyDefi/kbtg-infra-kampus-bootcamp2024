@@ -47,8 +47,8 @@ http://<public-ip-address>:3000/grafana
 
 # 📌 Must Have !! 
 - [ ] 1.Create a requirement visualization to display the "HTTP response code" of WordPress as shown below:
+![elk-graph01](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/c9c2203a-c207-47e0-ac3b-25b06cfcbc20)
 
-![grafana elk03](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/ac4ae92f-6e1c-4805-b005-12c14557ed83)
 
 - [ ] 2.Create a requirement visualization to display the "HTTP Responsetime by service" of WordPress as shown below:
 <img width="872" alt="elastic-query" src="https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/a2f87db8-9e9a-4519-896c-297255143ff4">
