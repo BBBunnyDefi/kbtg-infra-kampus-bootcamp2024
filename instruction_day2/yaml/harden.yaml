@@ -1,0 +1,107 @@
+---
+- name: Hardening CIS Benchmark Amazon Linux 2 (Level 1 and Level 2 Release V2.0.0)
+  gather_facts: true
+  hosts: all
+  become: yes
+  become_user: root
+  tasks:
+    - name: Check system type
+      ansible.builtin.debug: msg="System type is {{ ansible_distribution }} {{ ansible_distribution_major_version }} type systems"
+ 
+    - name: Collect package list
+      ansible.builtin.package_facts:
+        manager: auto
+      tags:
+        - always
+  # 5.1.8. Ensure cron is restricted to authorized users
+ 
+    - name: 5.1.8 Ensure cron is restricted to authorized users
+      block:
+        - name: 5.1.8 Ensure cron is restricted to authorized users | /etc/cron.deny
+          file:
+            path: /etc/cron.deny
+            state: absent
+          ignore_errors: yes
+        - stat:
+            path: /etc/cron.allow
+          register: cfile
+        - name: 5.1.8 Ensure cron is restricted to authorized users | /etc/cron.allow
+          file:
+            path: /etc/cron.allow
+            state: "{{ 'file' if cfile.stat.exists else 'touch' }}"
+            owner: root
+            group: root
+            mode: "u-x,og-rwx"
+      tags:
+        - 5.1.8
+  # 5.3.13. Ensure only strong Ciphers are used
+ 
+    - name: 5.3.13. Ensure only strong Ciphers are used
+      lineinfile:
+        state: present
+        dest: /etc/ssh/sshd_config
+        regexp: "^Ciphers"
+        line: "Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr"
+      tags:
+        - 5.3.13
+ 
+  # 5.3.14. Ensure only strong MAC algorithms are used
+ 
+    - name: 5.3.14 Ensure only strong MAC algorithms are used
+      lineinfile:
+        state: present
+        dest: /etc/ssh/sshd_config
+        regexp: "^MACs"
+        line: "MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256"
+      tags:
+        - 5.3.14
+ 
+  # 5.3.15. Ensure only strong Key Exchange algorithms are used
+ 
+    - name: 5.3.15 Ensure only strong Key Exchange algorithms are used
+      lineinfile:
+        state: present
+        dest: /etc/ssh/sshd_config
+        regexp: "^KexAlgorithms"
+        line: "KexAlgorithms curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp521,ecdh-sha2-nistp384,ecdh-sha2-nistp256,diffie-hellman-group-exchange-sha256"
+      tags:
+        - 5.3.15
+  # 5.3.16. Ensure SSH Idle Timeout Interval is configured
+ 
+    - name: 5.3.16. Ensure SSH Idle Timeout Interval is configured
+      block:
+        - name: 5.3.16 Ensure SSH Idle Timeout Interval is configured | clientalive
+          lineinfile:
+            state: present
+            dest: /etc/ssh/sshd_config
+            regexp: "^ClientAliveInterval"
+            line: "ClientAliveInterval 900"
+        - name: 5.3.16 Ensure SSH Idle Timeout Interval is configured | MaxAlive
+          lineinfile:
+            state: present
+            dest: /etc/ssh/sshd_config
+            regexp: "^ClientAliveCountMax"
+            line: "ClientAliveCountMax 0"
+      tags:
+        - 5.3.16
+  # 5.5.1.1. Ensure password expiration is 365 days or less
+ 
+    - name: 5.5.1.1. Ensure password expiration is 365 days or less | PASS_MAX_DAYS
+      lineinfile:
+        state: present
+        dest: /etc/login.defs
+        regexp: "^PASS_MAX_DAYS"
+        line: "PASS_MAX_DAYS 365"
+      tags:
+        - 5.5.1.1
+ 
+  # 5.5.1.2. Ensure minimum days between password changes is configured
+ 
+    - name: 5.5.1.2. Ensure minimum days between password changes is configured | PASS_MIN_DAYS
+      lineinfile:
+        state: present
+        dest: /etc/login.defs
+        regexp: "^PASS_MIN_DAYS"
+        line: "PASS_MIN_DAYS 1"
+      tags:
+        - 5.5.1.2
