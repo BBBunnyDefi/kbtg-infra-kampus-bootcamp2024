@@ -1,5 +1,5 @@
 # K-Infra Bootcamp #1
-Welcome to K-Infra Bootcamp - Intensive Workshop Day #1
+Welcome to K-Infra Bootcamp - Intensive Workshop Day #2
 ![Slide1](https://github.com/chayapon-s/kbtg-infra-kampus-bootcamp2024/assets/49383429/40c4ba50-673c-4bac-981b-eb21bc3dd264)
 
 ## Capability
@@ -22,4 +22,3 @@ Welcome to K-Infra Bootcamp - Intensive Workshop Day #1
 - [09 Setup Kibana (ELK Stack)](instruction_day2/09_setup_kibana-elk.md)
 - [10 Day2 Operation](instruction_day2/10_day2_operation.md)
 - [11 Setup Grafana02](instruction_day2/11_setup_grafana02.md)
-- [12 Surprise!](instruction_day2/12_k8s_situation_example.md)
