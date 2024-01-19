@@ -82,7 +82,7 @@ systemctl enable --now kubelet
 ### Initialize Kubernetes Cluster 
 ```sh
 # Initialize kubernetes cluster
-kubeadm init --apiserver-advertise-address=172.31.47.31 --pod-network-cidr=192.168.0.0/16
+kubeadm init --apiserver-advertise-address=x.x.x.x --pod-network-cidr=192.168.0.0/16
 ```
 To start using your cluster, you need to run the following as a regular user
 ```sh
@@ -96,7 +96,14 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 ```sh
 kubectl create -f https://docs.projectcalico.org/manifests/calico.yaml
 ```
-Waiting for 5 minutes for the control plane to be ready
+
+### Waiting for Calico Network pod are Ready 
+```sh
+kubectl get pod -n kube-system -l k8s-app=calico-kube-controllers
+kubectl get pod -n kube-system -l k8s-app=calico-node
+```
+Waiting for 5 minutes for the control-plane to be ready
+
 ### Create K8S join command
 ```sh
 kubeadm token create --print-join-command 
