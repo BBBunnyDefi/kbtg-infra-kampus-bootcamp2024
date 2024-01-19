@@ -30,10 +30,12 @@ timedatectl set-timezone Asia/Bangkok
 ```sh
 dnf update -y 
 ```
-### Reboot server to take effect
+
+### Reboot server to take effect (important!)
 ```sh
 reboot
 ```
+
 ### Set hostname
 ```sh
 hostnamectl set-hostname zabbix-server.local

@@ -34,6 +34,14 @@ k8s-worker01.local   93m          4%     1871Mi          24%
 k8s-worker02.local   69m          3%     1526Mi          20%
 ```
 
+### Troubleshoot
+If 'kubectl top pod' does not show the expected result, try checking the status of the APIService.
+All APIServices should be Available
+```sh
+kubectl get apiservice -A
+```
+
+
 ## 2) Setup Prometheus for kubernetes cluster
 ### installl git
 ```sh
