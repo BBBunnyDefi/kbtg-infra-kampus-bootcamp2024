@@ -108,10 +108,6 @@ Waiting for 5 minutes for the control-plane to be ready
 ```sh
 kubeadm token create --print-join-command 
 ```
-The result should be ..
-```sh
-kubeadm join 172.31.xx.xx:6443 --token xnzo5w.rcro8ooo0zx9um3j --discovery-token-ca-cert-hash sha256:187e6bbb5437cbb7a7243ed5c4ae5d5eb3ed40e37d36ee254f1beeb5b5f9f7ba
-```
 
 
 ## 2) Data Plane Installation
